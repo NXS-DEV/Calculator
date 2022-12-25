@@ -1,7 +1,8 @@
 from fractions import Fraction
+import math
 Greeting = "Welcome on the calculator\n"
 Greeting1 = "Developed by: Noxious"
-Version = 'The app version is : 0.0.0.7'
+Version = 'The app version is : 0.0.0.6'
 print(Greeting + Greeting1)
 print(Version)
 
@@ -27,6 +28,12 @@ def calculate(x, y, operation):
         return x ** y
     elif operation == "fraction":
         return fraction(x)
+    elif operation == "sine":
+        return math.sin(x)
+    elif operation == "cos":
+        return math.cos(x)
+    elif operation == "tan":
+        return math.tan(x)
     else:
         return "Error: Invalid operation"
 
@@ -41,6 +48,7 @@ while True:
     except ValueError:
         print("Error! Invalid input for the second number")
         continue
-    operation = input("Enter operation (add, subtract, multiply, divide, square,square root, powers, fraction): ")
+    operation = input("Enter operation (add, subtract, multiply,divide,square,square root,powers,fraction,sine,cos,tan): ")
     result = calculate(x, y, operation)
     print("Result:", result)
+
